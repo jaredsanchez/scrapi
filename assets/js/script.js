@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	$('#sign-right').click(function() {
-		window.location = 'browseScrapbooks.html';
-	})
 
 	// CAROUSEL STUFF STARTS HERE
 	//Implement the "slide to left" when the user clicks on #carousel-next here
@@ -150,6 +147,42 @@ $(document).ready(function() {
 			}, 800);
 		};
 	});
+	
+
+	// HOMEPAGE QUOTE FADE IN
+	$('#main-text-container').delay(100).fadeTo(1500, 1);
+	$('.sign-container').delay(1000).fadeTo(2000, 1);
+
+	// var state = 0;
+	// function toggle (state) {
+	// 	if (state == 0) {
+	// 		$('#main-text').delay(5000).fadeTo(1500, 0);
+	// 		$('#sub-text').delay(5000).fadeTo(1500, 0);
+	// 		$('#main-text1').delay(6150).fadeTo(1500, 1);
+	// 		$('#sub-text1').delay(6150).fadeTo(1500, 1);
+	// 		state = 1;
+	// 		toggle(state);
+	// 		return false;
+	// 	} else if (state == 1) {
+	// 		$('#main-text1').delay(5000).fadeTo(1500, 0);
+	// 		$('#sub-text1').delay(5000).fadeTo(1500, 0);
+	// 		$('#main-text2').delay(6150).fadeTo(1500, 1);
+	// 		$('#sub-text2').delay(6150).fadeTo(1500, 1);
+	// 		toggle(state);
+	// 		return false;
+	// 	} else if (state == 2) {
+	// 		$('#main-text2').delay(5000).fadeTo(1500, 0);
+	// 		$('#sub-text2').delay(5000).fadeTo(1500, 0);
+	// 		$('#main-text').delay(6150).fadeTo(1500, 1);
+	// 		$('#sub-text').delay(6150).fadeTo(1500, 1);
+	// 		toggle(state);
+	// 		return false;
+	// 	}
+	// };
+	// toggle(state);
+
+
+
 
 
 	//VIEW SCRABPBOOK STARTS HERE
@@ -200,7 +233,60 @@ $(document).ready(function() {
 		centerImg();
 	});
 
-})
+
+
+
+
+
+	// BUTTTON MAGIC
+	// HOMEPAGE SIGN UP
+	$('#sign-left, #sign-mid').click(function() {
+		$('#modal-container').css('display', 'block')
+		$('#modal-container').fadeTo(100, 1);
+		$('#modal-box').fadeTo(300, 1);
+		$('html, body').css({
+		    'overflow': 'hidden',
+		    'height': '100%'
+		});
+	});
+	$('#create, #cancel, #modal-overlay').click(function() {
+		$('#modal-container').css('display', 'none')
+		$('#modal-container').fadeTo(100, 0);
+		$('#modal-box').fadeTo(300, 0);
+		$('html, body').css({
+		    'overflow': 'auto',
+		    'height': 'auto%'
+		});
+	});
+	// Hompage buttons
+	$('#sign-right').click(function() {
+		window.location = 'browseScrapbooks.html';
+	});
+	$('#signIn').click(function() {
+		window.location = 'browseScrapbooks.html';
+	});
+	$('#logo').click(function() {
+		window.location = 'index.html'
+	});
+	$('#collections').click(function() {
+		window.location = 'browseScrapbooks.html';
+	});
+	$('.carousel-item').click(function() {
+		window.location = 'viewScrapbook.html';
+	});
+
+
+});
+
+// function hideModal() {
+// 	$('#modal-container').css('display', 'none')
+// 	$('#modal-container').fadeTo(100, 0);
+// 	$('#modal-box').fadeTo(300, 0);
+// 	$('html, body').css({
+// 	    'overflow': 'auto',
+// 	    'height': 'auto%'
+// 	});
+// };
 
 
 
