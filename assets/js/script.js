@@ -153,33 +153,57 @@ $(document).ready(function() {
 	$('#main-text-container').delay(100).fadeTo(1500, 1);
 	$('.sign-container').delay(1000).fadeTo(2000, 1);
 
-	// var state = 0;
-	// function toggle (state) {
-	// 	if (state == 0) {
-	// 		$('#main-text').delay(5000).fadeTo(1500, 0);
-	// 		$('#sub-text').delay(5000).fadeTo(1500, 0);
-	// 		$('#main-text1').delay(6150).fadeTo(1500, 1);
-	// 		$('#sub-text1').delay(6150).fadeTo(1500, 1);
-	// 		state = 1;
-	// 		toggle(state);
-	// 		return false;
-	// 	} else if (state == 1) {
-	// 		$('#main-text1').delay(5000).fadeTo(1500, 0);
-	// 		$('#sub-text1').delay(5000).fadeTo(1500, 0);
-	// 		$('#main-text2').delay(6150).fadeTo(1500, 1);
-	// 		$('#sub-text2').delay(6150).fadeTo(1500, 1);
-	// 		toggle(state);
-	// 		return false;
-	// 	} else if (state == 2) {
-	// 		$('#main-text2').delay(5000).fadeTo(1500, 0);
-	// 		$('#sub-text2').delay(5000).fadeTo(1500, 0);
-	// 		$('#main-text').delay(6150).fadeTo(1500, 1);
-	// 		$('#sub-text').delay(6150).fadeTo(1500, 1);
-	// 		toggle(state);
-	// 		return false;
-	// 	}
-	// };
-	// toggle(state);
+	var state = 0;
+	function toggle (s) {
+		if (s == 0) {
+			// $('#main-text').delay(5000).fadeTo(1500, 0);
+			// $('#sub-text').delay(5000).fadeTo(1500, 0);
+			$('#main-text-container').fadeTo(1500, 0);
+			window.setTimeout(function () {
+			    $('#main-text').text('"Why make a scrapbook any other way?"');
+			    // $('#sub-text').text('-Scrapi User');
+			}, 1500);
+			$('#main-text-container').delay(1000).fadeTo(1500, 1);
+			// $('#sub-text').delay(1000).fadeTo(1500, 1);
+			// $('#main-text1').delay(6150).fadeTo(1500, 1);
+			// $('#sub-text1').delay(6150).fadeTo(1500, 1);
+			state = 1;
+			// toggle(state);
+			return false;
+		} else if (s == 1) {
+			// $('#main-text1').delay(5000).fadeTo(1500, 0);
+			// $('#sub-text1').delay(5000).fadeTo(1500, 0);
+			// $('#main-text2').delay(6150).fadeTo(1500, 1);
+			// $('#sub-text2').delay(6150).fadeTo(1500, 1);
+			$('#main-text-container').fadeTo(1500, 0);
+			window.setTimeout(function () {
+			    $('#main-text').text('"I cant stop using Scrapi. Its so fun"');
+			    // $('#sub-text').text('-Scrapi User');
+			}, 1500);
+			$('#main-text-container').delay(1000).fadeTo(1500, 1);
+			// $('#sub-text').delay(1000).fadeTo(1500, 1);
+			state = 2;
+			// toggle(state);
+			return false;
+		} else if (s == 2) {
+			// $('#main-text2').delay(5000).fadeTo(1500, 0);
+			// $('#sub-text2').delay(5000).fadeTo(1500, 0);
+			// $('#main-text').delay(6150).fadeTo(1500, 1);
+			// $('#sub-text').delay(6150).fadeTo(1500, 1);
+			$('#main-text-container').fadeTo(1500, 0);
+			window.setTimeout(function () {
+			    $('#main-text').text('"The easiest way to make a scrapbook"');
+			    // $('#sub-text').text('-Scrapi User');
+			}, 1500);
+			$('#main-text-container').delay(1000).fadeTo(1500, 1);
+			// $('#sub-text').delay(1000).fadeTo(1500, 1);
+			state = 0;
+			return false;
+		}
+	};
+	window.setInterval(function(){
+	  toggle(state);
+	}, 7000);
 
 
 
